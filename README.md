@@ -1,6 +1,6 @@
 # BOOLEAN_FUNCTION_MINIMIZATION
 
-**AIM:**
+*AIM:*
 
 To implement the given logic function verify its operation in Quartus using Verilog programming.
 
@@ -8,17 +8,17 @@ F1= A’B’C’D’+AC’D’+B’CD’+A’BCD+BC’D
 
 F2=xy’z+x’y’z+w’xy+wx’y+wxy
 
-**Equipment Required:**
+*Equipment Required:*
 
 Hardware – PCs, Cyclone II , USB flasher
 
-**Software – Quartus prime**
+*Software – Quartus prime*
 
-**Theory**
+*Theory*
 
-**Logic Diagram**
+*Logic Diagram*
 
-**Procedure**
+*Procedure*
 
 1.	Type the program in Quartus software.
 
@@ -30,23 +30,32 @@ Hardware – PCs, Cyclone II , USB flasher
 
 5.	For different input combinations generate the timing diagram.
 
+*Program:*
+~~~
+/* Program to implement the given logic function and to verify its operations in quartus using Verilog programming.
 
-**Program:**
+Developed by:JAYASURYA M RegisterNumber:212223050023
 
-/* Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
+module booleanfunction_top(a,b,c,d,w,x,y,z,f1,f2);
+input a,b,c,d,w,x,y,z;
+output f1,f2;
+wire adash,bdash,cdash,ddash,ydash,p,q,r,s,t,u;
+not(adash,a);
+not(bdash,b);
+not(cdash,c);
+not(ddash,d);
+not(ydash,y);
+and(p,bdash,ddash);
+and(q,adash,b,d);
+and(r,a,b,cdash);
+or(f1,p,q,r);
+//type code for f2 as like f1
+endmodule
+*/
+~~~
+*Output:*
+![Screenshot 2024-03-13 161036](https://github.com/04Varsha/BOOLEAN_FUNCTION_MINIMIZATION/assets/149035374/533d1307-308c-4a6d-9495-b6f289bf8479)
 
-Developed by: RegisterNumber:*/
-
-
-**RTL realization**
-
-**Output:**
-
-**RTL**
-
-**Timing Diagram**
-
-**Result:**
+*Result:*
 
 Thus the given logic functions are implemented using and their operations are verified using Verilog programming.
-
